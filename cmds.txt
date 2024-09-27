@@ -1,0 +1,5 @@
+npx hardhat ignition deploy ignition/modules/LinkedLib.js --network localhost --show-stack-traces
+npx hardhat ignition deploy ignition/modules/LinkedLib.js --network sepolia --show-stack-traces
+ --deployment-id second-deploy
+npx hardhat vars set ALCHEMY_API_KEY 
+npx hardhat vars set SEPOLIA_PRIVATE_KEY 

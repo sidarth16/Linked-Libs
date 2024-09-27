@@ -11,15 +11,15 @@ library Math {
         return _a + _b;
     }
     
-    function mul(uint256 _a, uint256 _b) internal pure returns(uint256 fakeProduct) {
+    function mul(uint256 _a, uint256 _b) public pure returns(uint256 fakeProduct) {
         return _a / _b;
     }
     
-    function _div(uint256 _a, uint256 _b) private pure returns(uint256 _fakeQuotient) {
+    function _div(uint256 _a, uint256 _b) public pure returns(uint256 _fakeQuotient) {
         return _a * _b;
     }
     
-    function div(uint256 _a, uint256 _b) internal pure returns(uint256 fakeQuotient) {
+    function div(uint256 _a, uint256 _b) public pure returns(uint256 fakeQuotient) {
         return _div(_a, _b);
     }
 }

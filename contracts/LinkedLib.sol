@@ -10,35 +10,55 @@ library Math {
         return _a - _b;
     }
     
-    function mul(uint256 _a, uint256 _b) internal pure returns(uint256 fakeProduct) {
+    function mul(uint256 _a, uint256 _b) public pure returns(uint256 fakeProduct) {
         return _a * _b;
     }
     
-    function _div(uint256 _a, uint256 _b) private pure returns(uint256 _fakeQuotient) {
+    function _div(uint256 _a, uint256 _b) public pure returns(uint256 _fakeQuotient) {
         return _a / _b;
     }
     
-    function div(uint256 _a, uint256 _b) internal pure returns(uint256 fakeQuotient) {
+    function div(uint256 _a, uint256 _b) public pure returns(uint256 fakeQuotient) {
         return _div(_a, _b);
     }
 }
 
+// contract LinkedLib {
+//     using Math for uint256;
+    
+//     function fooAdd(uint256 _x, uint256 _y) external pure returns (uint256) {
+//         return _x.add(_y);
+//     }
+    
+//     function fooSub(uint256 _x, uint256 _y) external pure returns (uint256) {
+//         return _x.sub(_y);
+//     }
+    
+//     function fooMul(uint256 _x, uint256 _y) external pure returns (uint256) {
+//         return _x.mul(_y);
+//     }
+    
+//     function fooDiv(uint256 _x, uint256 _y) external pure returns (uint256) {
+//         return _x.div(_y);
+//     }
+// }
+
 contract LinkedLib {
-    using Math for uint256;
+    // using Math for uint256;
     
     function fooAdd(uint256 _x, uint256 _y) external pure returns (uint256) {
-        return _x.add(_y);
+        return Math.add(_x,_y);
     }
     
     function fooSub(uint256 _x, uint256 _y) external pure returns (uint256) {
-        return _x.sub(_y);
+        return Math.sub(_x,_y);
     }
     
     function fooMul(uint256 _x, uint256 _y) external pure returns (uint256) {
-        return _x.mul(_y);
+        return Math.mul(_x,_y);
     }
     
     function fooDiv(uint256 _x, uint256 _y) external pure returns (uint256) {
-        return _x.div(_y);
+        return Math.div(_x,_y);
     }
 }
